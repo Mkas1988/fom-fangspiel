@@ -219,7 +219,25 @@
 // ============================================================
 // KONFIGURATION - Sticker-Bilder hier austauschen
 // ============================================================
-const STICKER_IMAGES = [];
+const STICKER_IMAGES = [
+    'stickers/25_145_DUAL_Messeauftritt_Sticker_RGB_Aufstieg.png',
+    'stickers/25_145_DUAL_Messeauftritt_Sticker_RGB_Augen.png',
+    'stickers/25_145_DUAL_Messeauftritt_Sticker_RGB_FOM_Logo.png',
+    'stickers/25_145_DUAL_Messeauftritt_Sticker_RGB_Freiheitsstatue.png',
+    'stickers/25_145_DUAL_Messeauftritt_Sticker_RGB_Herzfinger.png',
+    'stickers/25_145_DUAL_Messeauftritt_Sticker_RGB_Kleeblatt.png',
+    'stickers/25_145_DUAL_Messeauftritt_Sticker_RGB_NeverStop.png',
+    'stickers/25_145_DUAL_Messeauftritt_Sticker_RGB_Peace.png',
+    'stickers/25_145_DUAL_Messeauftritt_Sticker_RGB_PerfectionPur.png',
+    'stickers/25_145_DUAL_Messeauftritt_Sticker_RGB_PerfectionSternOben.png',
+    'stickers/25_145_DUAL_Messeauftritt_Sticker_RGB_PerfectionSternUnten.png',
+    'stickers/25_145_DUAL_Messeauftritt_Sticker_RGB_SmileyOnly.png',
+    'stickers/25_145_DUAL_Messeauftritt_Sticker_RGB_SmileySlide.png',
+    'stickers/25_145_DUAL_Messeauftritt_Sticker_RGB_Sonnenblume.png',
+    'stickers/25_145_DUAL_Messeauftritt_Sticker_RGB_Welt.png',
+    'stickers/25_145_DUAL_Messeauftritt_Sticker_RGB_Yeah.png',
+    'stickers/25_145_DUAL_Messeauftritt_Sticker_RGB_YouGotThis.png',
+];
 
 // ============================================================
 // FARBEN (FOM Design System)
@@ -699,7 +717,7 @@ function spawnItem() {
     if (isLogo) {
         items.push({ x, y: -sz, size: sz, type: 'logo', wobbleOff: Math.random() * Math.PI * 2 });
     } else {
-        const idx = Math.floor(Math.random() * STICKER_PLACEHOLDERS.length);
+        const idx = Math.floor(Math.random() * (stickerImgs.length || STICKER_PLACEHOLDERS.length));
         items.push({ x, y: -sz, size: sz, type: 'sticker', stickerIdx: idx, rot: 0, rotSpd: (Math.random() - 0.5) * 0.04 });
     }
 }
